@@ -191,7 +191,7 @@
   .close-btn { background: none; border: none; cursor: pointer; font-size: 24px; color: #999; line-height: 1; padding: 4px; transition: color 0.2s; }
   .close-btn:hover { color: #333; }
   .modal-body { padding: 8px 28px 24px; }
-  .modal-row { display: flex; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #f5f5f5; }
+  .modal-row { display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f5f5f5; }
   .modal-row:last-child { border-bottom: none; }
   .modal-label { width: 170px; min-width: 170px; font-size: 14px; color: #555; padding-top: 4px; }
   .modal-value { font-size: 14px; color: #1a1a1a; flex: 1; }
@@ -223,26 +223,26 @@
 
   /* ===== CREDIT INFO (Apple style) ===== */
   .credit-info-block {
-    margin-top: 12px; display: none;
+    margin-top: 10px; display: none;
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(0,0,0,0.06); border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.06); border-radius: 12px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.06); overflow: hidden;
   }
   .credit-info-block.visible { display: block; }
   .cib-header {
-    padding: 12px 18px 10px; font-size: 13px; font-weight: 600;
+    padding: 10px 14px 8px; font-size: 13px; font-weight: 600;
     color: #1d1d1f; letter-spacing: -0.02em;
   }
   .cib-rows { display: flex; flex-direction: column; }
   .cib-row {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 11px 18px; border-top: 1px solid rgba(0,0,0,0.05);
+    padding: 7px 14px; border-top: 1px solid rgba(0,0,0,0.04);
   }
   .cib-row-icon {
-    width: 30px; height: 30px; border-radius: 8px;
+    width: 26px; height: 26px; border-radius: 6px;
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-right: 12px;
+    flex-shrink: 0; margin-right: 10px;
   }
   .cib-row-icon.blue { background: rgba(0,122,255,0.1); }
   .cib-row-icon.blue svg { color: #007aff; }
@@ -250,10 +250,10 @@
   .cib-row-icon.orange svg { color: #ff9500; }
   .cib-row-icon.green { background: rgba(52,199,89,0.1); }
   .cib-row-icon.green svg { color: #34c759; }
-  .cib-row-icon svg { width: 16px; height: 16px; }
+  .cib-row-icon svg { width: 14px; height: 14px; }
   .cib-row-left { display: flex; align-items: center; flex: 1; }
-  .cib-row-label { font-size: 13px; color: #555; letter-spacing: -0.01em; }
-  .cib-row-value { font-size: 13px; font-weight: 600; color: #1d1d1f; text-align: right; letter-spacing: -0.01em; }
+  .cib-row-label { font-size: 12px; color: #555; letter-spacing: -0.01em; }
+  .cib-row-value { font-size: 12px; font-weight: 600; color: #1d1d1f; text-align: right; letter-spacing: -0.01em; }
 
   /* ===== RESULT MODALS ===== */
   .result-modal {
@@ -316,7 +316,8 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         <div class="info-tooltip">
           <div class="tip-headline">Купуйте пальне зараз — платіть потім</div>
-          <div class="tip-body">Придбайте талони з відтермінуванням оплати до 90 днів. Графік оплати та історію переказів можна переглянути в кабінеті eDilo.</div>
+          <div class="tip-body">Придбайте талони з відтермінуванням оплати до 90 днів.</div>
+          <div class="tip-body" style="margin-top:8px; opacity:0.75;">Графік оплати та історію переказів можна переглянути в кабінеті eDilo.</div>
         </div>
       </div>
     </div>
@@ -330,7 +331,7 @@
 <!-- FILTERS -->
 <div class="filters-bar">
   <div class="filter-group"><label>Оберіть організацію</label><select class="select-org"><option>Тарас Григорович Шевченко ФОП</option></select></div>
-  <div class="filter-group"><label>Оберіть рахунок</label><select class="select-account"><option>Тарас Григорович Шевченко фіз.ос.</option></select></div>
+  <div class="filter-group"><label>Оберіть рахунок</label><select class="select-account"><option>ФОП Тарас Григорович Шевченко</option></select></div>
   <div class="filter-group"><label>Період</label><div class="period-inputs"><input type="date" value="2026-01-23"><span class="period-arrow">→</span><input type="date" value="2026-03-23"></div></div>
   <div class="filter-group"><label>Статус</label><select class="select-status"><option>Всі</option><option>Прострочений</option><option>Оплачений</option></select></div>
 </div>
@@ -385,7 +386,7 @@
     </div>
     <div class="modal-body">
       <div class="modal-row"><div class="modal-label">Договір</div><div class="modal-value">Договір №0404/061021-0610ШК</div></div>
-      <div class="modal-row"><div class="modal-label">Рахунок</div><div class="modal-value">Тарас Григорович Шевченко<br>фіз.ос.</div></div>
+      <div class="modal-row"><div class="modal-label">Рахунок</div><div class="modal-value">ФОП Тарас Григорович Шевченко</div></div>
       <div class="modal-row"><div class="modal-label">Email</div><div class="modal-value"><input type="email" id="emailInput" value="taras123@gmail.com"></div></div>
       <div class="modal-row">
         <div class="modal-label">Талони на</div>
