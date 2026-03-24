@@ -65,13 +65,13 @@
   .credit-edilo-btn {
     display: flex; align-items: center; justify-content: center;
     padding: 0 14px; margin: 6px; margin-left: 8px;
-    background: #1d1d1f; color: #fff; border: none; border-radius: 8px;
+    background: #323434; color: #A9F9F3; border: none; border-radius: 8px;
     font-family: inherit; font-size: 11px; font-weight: 600;
     cursor: pointer; white-space: nowrap; height: 34px;
     transition: all 0.2s ease; text-decoration: none; letter-spacing: -0.01em;
   }
   .credit-edilo-btn:hover {
-    background: #333; box-shadow: 0 2px 12px rgba(0,0,0,0.2); transform: scale(1.02);
+    background: #3e4040; box-shadow: 0 2px 12px rgba(50,52,52,0.3); transform: scale(1.02);
   }
 
   /* ===== INFO TOOLTIP (Apple style) ===== */
@@ -454,7 +454,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
     </div>
     <div class="result-title">Рахунок надіслано!</div>
-    <div class="result-text">Рахунок-фактуру надіслано на пошту<br><b id="resultEmail">taras123@gmail.com</b>.<br>Перевірте вхідні повідомлення.</div>
+    <div class="result-text">Рахунок-фактуру надіслано на пошту<br><b id="resultEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cdb9acbfacbefcfffe8daaa0aca4a1e3aea2a0">[email&#160;protected]</a></b>.<br>Перевірте вхідні повідомлення.</div>
     <div class="result-buttons">
       <button class="result-btn green" onclick="closeAllModals()">Зрозуміло</button>
     </div>
@@ -464,7 +464,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
     </div>
     <div class="result-title">Заявку прийнято!</div>
-    <div class="result-text">Вашу заявку на відтермінування успішно прийнято.<br>Перейдіть у кабінет <b>eDilo</b> для підписання<br>розпорядження на оплату.</div>
+    <div class="result-text">Вашу заявку на відтермінування успішно прийнято.<br>Перейдіть у кабінет <b>eDilo</b>, щоб підписати документи.</div>
     <div class="result-buttons">
       <button class="result-btn outline" onclick="closeAllModals()">Закрити</button>
       <a href="https://web.edilo.com.ua" target="_blank" class="result-btn dark">Підписати в eDilo</a>
@@ -472,7 +472,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function getPrice() { return parseFloat(document.getElementById('productSelect').value); }
   function getLiters() { return parseInt(document.getElementById('litersInput').value) || 0; }
   function fmt(n) { return n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
@@ -519,11 +519,10 @@
   document.getElementById('modalOverlay').addEventListener('click', (e) => {
     if (e.target === e.currentTarget) closeAllModals();
   });
-  document.getElementById('resultOverlay').addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) closeAllModals();
-  });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllModals(); });
-
+  document.getElementById('resultOverlay').onclick = function(e) {
+    if (e.target === this) closeAllModals();
+  };
+  document.onkeydown = function(e) { if (e.key === 'Escape') closeAllModals(); };
   updateSum();
 </script>
 </body>
